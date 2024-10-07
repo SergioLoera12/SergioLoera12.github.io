@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consumo de APIs</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <h1>MY API'S WEB SITE</h1>
+
+  <!-- Botones para las diferentes categorías -->
+<a href="staticmap.html"><button id="maps" >MAPS</button></a>
+  <button id="sociales">SOCIALES</button>
+  <button id="online">ONLINE</button>
+  <button id="streaming">STREAMING</button>
+  <button id="e-commerce">E-COMMERCE</button>
+  <button id="database">DATABASE</button>
+
+  <script>
+    // Función genérica para consumir APIs
+    function consumirAPI(url) {
+      fetch(url)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Error en la respuesta de la API');
+          }
+          return response.json();
+        })
+        .then(data => {
+          document.getElementById('resultado').textContent = JSON.stringify(data, null, 2);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          document.getElementById('resultado').textContent = `Error: ${error.message}`;
+        });
+    }
+
+    // Botón MAPS
+    document.getElementById('maps').addEventListener('click', () => {
+      const url = 'https://maps.googleapis.com/maps/api'; // API de ejemplo de Google Maps

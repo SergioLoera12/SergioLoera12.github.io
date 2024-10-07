@@ -1,0 +1,48 @@
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+/* Estilo del título principal */
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* Estilo de los botones */
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Estilo del subtítulo */
+h2 {
+    color: #34495e;
+    margin-top: 30px;
+}
+
+/* Estilo del área de resultado */
+pre {
+    background-color: #ecf0f1;
+    padding: 15px;
+    border-radius: 5px;
+    overflow: auto;
+    max-height: 400px; /* Limita la altura del área de resultados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
